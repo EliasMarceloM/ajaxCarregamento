@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h1 id="carregar">carregar</h1>
+
+  <script>
+   
+    var cracha = 0;
+    function ajaxCarregar() {
+      const xhttp = new XMLHttpRequest();
+
+      xhttp.onload = function () {
+        cracha = this.responseText;
+        document.getElementById("carregar").innerHTML = cracha ;
+        localStorage.setItem("cracha",cracha) ;
+      }
+
+
+
+      xhttp.open("GET", "arquivo.json", true);
+      xhttp.send();
+    }
+    ajaxCarregar();
+    
+   
+   
+  </script>
+
+
+</body>
+
+</html>
